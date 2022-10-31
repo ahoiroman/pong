@@ -1,0 +1,56 @@
+{
+    "name": "ahoiroman/pong",
+    "version": "1.0.0",
+    "description": "Pong uses the ICMP protocol's mandatory ECHO_REQUEST datagram to elicit an ICMP ECHO_RESPONSE from a host or gateway.",
+    "keywords": [
+        "icmp",
+        "laravel",
+        "php",
+        "ping"
+    ],
+    "homepage": "https://github.com/ahoiroman/pong",
+    "readme": "https://github.com/ahoiroman/pong/blob/master/README.md",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Roman Lossin-Beßler",
+            "email": "roman@internethelden.io",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.23",
+        "phpunit/phpunit": "^9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ahoiroman\\Pong\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ahoiroman\\Pong\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit --colors=always --testdox",
+        "test-coverage": "phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ahoiroman\\Pong\\ServiceProviders\\PongServiceProvider"
+            ],
+            "aliases": {
+                "Pong": "Ahoiroman\\Pong\\Facades\\PongFacade"
+            }
+        }
+    }
+}
