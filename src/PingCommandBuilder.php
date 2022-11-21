@@ -2,7 +2,6 @@
 
 namespace Ahoiroman\Pong;
 
-use Ahoiroman\Pong\Exceptions\InvalidIPAddressException;
 use Ahoiroman\Pong\Exceptions\MaxValueException;
 use Ahoiroman\Pong\Exceptions\NegativeValueException;
 use Ahoiroman\Pong\Exceptions\UnknownOSException;

@@ -30,7 +30,7 @@ final class PingParserForLinux extends PingParser
             'packets|transmitted|received|+|errors|%|packet|loss|time|ms'
         );
 
-        $row = trim(str_replace($search, null, $row));
+        $row = trim(str_replace($search, '', $row));
 
         return array_map('trim', explode(', ', $row));
     }
@@ -87,7 +87,7 @@ final class PingParserForLinux extends PingParser
             return [];
         }
 
-        $row = trim(str_replace(['ms', 'rtt'], null, $row));
+        $row = trim(str_replace(['ms', 'rtt'], '', $row));
 
         $rtt = explode(' = ', $row);
 

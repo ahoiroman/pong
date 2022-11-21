@@ -32,7 +32,7 @@ final class PingParserForMacOS extends PingParser implements PingParserInterface
             'packets|transmitted|received|+|errors|%|packet|loss|time|ms'
         );
 
-        $row = trim(str_replace($search, null, $row));
+        $row = trim(str_replace($search, '', $row));
 
         return array_map('trim', explode(', ', $row));
     }
@@ -89,7 +89,7 @@ final class PingParserForMacOS extends PingParser implements PingParserInterface
             return [];
         }
 
-        $row = trim(str_replace(['ms', 'round-trip'], null, $row));
+        $row = trim(str_replace(['ms', 'round-trip'], '', $row));
 
         $rtt = explode(' = ', $row);
 
